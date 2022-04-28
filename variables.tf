@@ -6,8 +6,8 @@ variable "s3_bucket_name" {
 }
 
 variable "name" {
-  type    = string
-  default = ""
+  type        = string
+  default     = ""
   description = "Name  (e.g. `app` or `cluster`)."
 }
 
@@ -34,4 +34,47 @@ variable "StackName" {
 variable "TemplatePath" {
   type    = string
   default = ""
+}
+
+variable "location" {
+  type    = string
+  default = ""
+
+}
+
+variable "repository" {
+  type        = string
+  default     = "https://github.com/clouddrove/terraform-aws-kms"
+  description = "Terraform current module repo"
+}
+
+variable "environment" {
+  type        = string
+  default     = ""
+  description = "Environment (e.g. `prod`, `dev`, `staging`)."
+}
+
+variable "label_order" {
+  type        = list(any)
+  default     = []
+  description = "label order, e.g. `name`,`application`."
+}
+
+variable "managedby" {
+  type        = string
+  default     = "hello@clouddrove.com"
+  description = "ManagedBy, eg 'CloudDrove'."
+}
+
+variable "role_arn" {
+  type        = string
+  default     = ""
+  description = "Optionally supply an existing role"
+}
+
+
+variable "kms_key" {
+  type    = string
+  default = ""
+
 }
